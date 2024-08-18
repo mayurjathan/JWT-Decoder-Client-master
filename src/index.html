@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JWT Decoder</title>
+
+  <link href="Bootstrap/bootstrap-dark.min.css" rel="stylesheet" />
+  <script src="Bootstrap/bootstrap.bundle.min.js"></script>
+
+  <script src="logic.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row mt-3">
+      <div class="jumbotron jumbotron-fluid">
+        <h1 class="display-4">JWT Decoder</h1>
+        <p class="lead">A simple web app to decode your JWT tokens!</p>
+        <hr />
+      </div>
+    </div>
+
+    <div class="row gy-3 mb-3" id="alertrow">
+      <div class="col-lg-8 col-md-12">
+        <div class="card h-100">
+          <div class="card-header">PASTE YOUR TOKEN HERE</div>
+          <div class="card-body">
+            <textarea class="form-control" id="tokeninput" rows="6"></textarea>
+          </div>
+          <div class="text-center">
+            <button type="button" class="btn btn-primary mb-3 w-25 me-2" id="decodejwtbtn">DECODE</button>
+            <button type="button" class="btn btn-danger mb-3 w-25 ms-2" id="clearjwtbtn">CLEAR</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-12">
+        <div class="card h-100">
+          <div class="card-header">JWT VERIFICATION</div>
+          <div class="card-body">
+            <input type="text" class="form-control mb-3" id="secretinput" placeholder="Your secret goes here...">
+            <p class="card-text text-center">Algorithm detected: <span id="algorithmresult">-</span></p>
+            <div class="text-center">
+              <button type="button" class="btn btn-info mb-3 w-50" id="validatejwtbtn">VALIDATE</button>
+            </div>
+            <p class="card-text text-center" id="validityresult"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row gy-3 mb-3">
+      <div class="col-lg-8 col-md-12">
+        <div class="card h-100">
+          <div class="card-header">JWT PAYLOAD DATA</div>
+          <div class="card-body">
+            <pre><code id="tokenresult">Data goes here...</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-12">
+        <div class="card h-100">
+          <div class="card-header">JWT HEADERS</div>
+          <div class="card-body">
+            <pre><code id="tokenheaders">Headers go here...</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
